@@ -1,12 +1,12 @@
 class Store {
 
-    constructor() {
-        this.downloadPath = '';
-    }
+  constructor() {
+    this.downloadPath = '';
+  }
 
-    updateDownloadPath(path) {
-        this.downloadPath = path;
-    }
+  updateDownloadPath(path) {
+    this.downloadPath = path;
+  }
 }
 
 // Using module allows to export an unique store instance

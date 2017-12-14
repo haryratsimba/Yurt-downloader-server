@@ -1,13 +1,13 @@
 <template>
 <div id="app" class="window">
-    <toolbar/>
-    <div class="window-content">
-        <div class="pane-group">
-            <div class="pane">
-                <download-list></download-list>
-            </div>
-        </div>
+  <toolbar/>
+  <div class="window-content">
+    <div class="pane-group">
+      <div class="pane">
+        <download-list></download-list>
+      </div>
     </div>
+  </div>
 </div>
 </template>
 
@@ -20,18 +20,18 @@ import Store from './store';
 const {ipcRenderer} = require('electron');
 
 export default {
-    name: 'app',
-    components: {
-        Toolbar,
-        DownloadList
-    },
-    created() {
-        // Sync the download path
-        ipcRenderer.on('download-sync-path', (event, downloadPath)=> {
-            console.log('sync path', downloadPath);
+  name: 'app',
+  components: {
+    Toolbar,
+    DownloadList
+  },
+  created() {
+    // Sync the download path
+    ipcRenderer.on('download-sync-path', (event, downloadPath) => {
+      console.log('sync path', downloadPath);
 
-            Store.updateDownloadPath(downloadPath);
-        });
-    }
+      Store.updateDownloadPath(downloadPath);
+    });
+  }
 }
 </script>
