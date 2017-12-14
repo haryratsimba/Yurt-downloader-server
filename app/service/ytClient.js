@@ -43,7 +43,7 @@ class YtClient {
         const thumbnail = YtClient.getThumbnailURL(mediaId);
 
         if (!downloadURL || !filename) {
-          download.emit('The Youtube to MP3 API may be unavailable. Please try later.');
+          download.emit('error', 'The Youtube to MP3 API may be unavailable. Please try later.');
         } else {
           download.emit('download-details', {
             filename,
