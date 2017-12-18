@@ -10,7 +10,7 @@
 
 *Yurt* consits of two applications : the *Yurt browser extension* and the *Yurt downloader* standalone websocket server. This server listens to download messages coming from the *Yurt browser extension* then trigger the conversion and download of Youtube videos to MP3 files.
 
-![Yurt downloader service](https://raw.githubusercontent.com/haryratsimba/Yurt-downloader-server/master/static/screenshots/screenshot.png "Yurt downloader service")
+![Yurt downloader service](https://raw.githubusercontent.com/haryratsimba/Yurt-downloader-server/master/static/screenshots/banner.png "Yurt downloader service")
 
 ## Running locally
 
