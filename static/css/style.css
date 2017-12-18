@@ -40,12 +40,16 @@ header.toolbar-header .toolbar-actions .server-status .icon-signal {
     font-size: 1.3em;
 }
 
+.toolbar-header .toolbar-window-actions .icon-minus:hover {
+    color: #49CAE7;
+}
+
 .toolbar-header .toolbar-window-actions .icon-cancel:hover {
     color: #c0392b;
 }
 
 .empty-list {
-    margin-top: 18px;
+    margin-top: 28px;
     text-align: center;
 }
 
@@ -70,7 +74,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-    background-color: #8DCEA8;
+    background-color: #FF6FBC;
 }
 
 progress {

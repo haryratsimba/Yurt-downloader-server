@@ -3,7 +3,7 @@
   <download v-for="value in downloads" :download="value" />
 </ul>
 <div v-else class="empty-list">
-  <img src="./static/img/eye-mask.svg" alt="empty-list" height="110">
+  <img src="./static/img/yurt-empty.svg" alt="empty-list" height="110">
   <p>Looks like your download list is empty.</p>
 </div>
 </template>

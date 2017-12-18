@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     thumbnail() {
-      return this.download.thumbnail || './static/img/photo-camera.svg';
+      return this.download.thumbnail || './static/img/download.svg';
     }
   },
   filters: {
