@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://raw.githubusercontent.com/haryratsimba/Yurt-downloader-server/master/static/img/logo.png" width=280 alt="Yurt downloader service">
+    <img src="https://raw.githubusercontent.com/haryratsimba/Yurt-downloader-server/master/static/img/logo.png" width=80 alt="Yurt downloader service">
     <br>
     Yurt downloader service
 </p>
