@@ -1,5 +1,6 @@
 const {ipcMain, dialog, app, session} = require('electron');
 const settings = require('electron-settings');
+const fs = require('fs');
 
 class IpcManager {
 
@@ -42,6 +43,8 @@ class IpcManager {
 
       dialog.showOpenDialog(options, path => {
         if (path) {
+          path = path[0];
+
           // Store the download path
           settings.set('path', path);
 
@@ -54,10 +57,12 @@ class IpcManager {
 
     // Sync the download path with the web content after a delay to ensure the window is ready to listen
     setTimeout(() => {
-      // If not stored, default path is the download user folder
-      let downloadPath = app.getPath('downloads');
-      if (settings.has('path')) {
-        downloadPath = settings.get('path');
+      // If not stored or path is obsolete (folder structure may have change),
+      // default path is the download user folder
+      let downloadPath = settings.has('path') && settings.get('path');
+      if (!downloadPath || !fs.existsSync(downloadPath)) {
+        downloadPath = app.getPath('downloads');
+        settings.set('path', downloadPath);
       }
 
       // The app component will handle the storage sync

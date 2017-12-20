@@ -76,7 +76,7 @@ export default {
       ipcRenderer.send(`server-${newServerState}`);
     },
     updateDownloadPath() {
-      ipcRenderer.send('main-open-file-dialog');
+      ipcRenderer.send('main-open-file-dialog', Store.downloadPath);
     },
     flushDownloadList() {
       EventBus.$emit('ui-evt-flush-downloads');
