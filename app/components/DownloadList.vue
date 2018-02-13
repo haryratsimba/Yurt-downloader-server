@@ -80,6 +80,7 @@ export default {
       const percent = parseFloat((parseFloat(received) * 100.0 / parseFloat(size)).toFixed(2));
       if (currentDownload.progressPercentage != percent) {
         this.$set(currentDownload, 'progressPercentage', percent);
+        console.log('Set percentage', percent);
         this.$set(currentDownload, 'progressReceived', received);
       }
     }

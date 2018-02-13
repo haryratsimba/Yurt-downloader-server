@@ -55,8 +55,9 @@ class IpcManager {
 
     let {webContents} = this.window;
 
-    // Sync the download path with the web content after a delay to ensure the window is ready to listen
-    setTimeout(() => {
+    // Sync the download path with the web content once the DOM is ready to ensure the sync is done
+    // because messages are asynchronous
+    webContents.once('dom-ready', () => {
       // If not stored or path is obsolete (folder structure may have change),
       // default path is the download user folder
       let downloadPath = settings.has('path') && settings.get('path');
@@ -67,7 +68,7 @@ class IpcManager {
 
       // The app component will handle the storage sync
       webContents.send('download-sync-path', downloadPath);
-    }, 800);
+    });
 
     this.server.on('listening', details => {
       webContents.send('server-listening', details);
